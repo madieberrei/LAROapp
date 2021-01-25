@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,6 +10,14 @@ import { RandomizerComponent } from './randomizer/randomizer.component';
 import { ContactComponent } from './contact/contact.component';
 import { ResultsComponent } from './randomizer/results/results.component';
 
+
+
+const appRoutes: Routes =[
+  { path: '', component: LandingComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'randomizer', component: RandomizerComponent }
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +30,8 @@ import { ResultsComponent } from './randomizer/results/results.component';
     ResultsComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
