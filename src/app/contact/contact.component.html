@@ -1,18 +1,46 @@
-<form>
+
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <fieldset>
       <div class="form-group row ml-1">
-          If you would like to send me a message, please use the form below.
+        <p class="text-secondary">
+          <strong>
+            If you would like to send me a message, please use the form below.
+          </strong>
+        </p>
       </div>
       <div class="form-group ml-1">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="exampleInputEmail1">
+          Email address
+        </label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="email" 
+          aria-describedby="emailHelp" 
+          placeholder="Enter email"
+          ngModel
+            name="email">
+        <small id="emailHelp" class="form-text text-muted">
+          We'll never share your email with anyone else.
+        </small>
       </div>
 
       <div class="form-group ml-1">
-        <label for="exampleTextarea">Message:</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        <label for="exampleTextarea">
+          Message:
+        </label>
+        <textarea 
+          class="form-control" 
+          id="message" 
+          rows="3"
+          ngModel
+            name="message"></textarea>
       </div>
-      <button type="submit" class="btn btn-secondary float-right">Submit</button>
+      <button 
+        type="submit" 
+        class="btn btn-secondary float-right">
+          Submit
+      </button>
     </fieldset>
   </form>
