@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,17 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+@ViewChild('f') signupForm: NgForm;
+message='';
+name='';
+
+user = {
+  name: '',
+  email: '',
+  message: ''
+};
+submitted = false;
+
 
   constructor() { }
 
@@ -14,7 +25,10 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.submitted = true;
+    this.user.name = this.signupForm.value.name;
+    this.user.email = this.signupForm.value.email;
+    this.user.message = this.signupForm.value.message;
   }
 
 }

@@ -1,46 +1,88 @@
 
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <fieldset>
+              <div class="form-group row ml-1">
+                <p class="text-secondary">
+                  <strong>
+                    Send me a comment!
+                  </strong>
+                </p>
+              </div>
 
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <fieldset>
-      <div class="form-group row ml-1">
-        <p class="text-secondary">
-          <strong>
-            If you would like to send me a message, please use the form below.
-          </strong>
-        </p>
-      </div>
-      <div class="form-group ml-1">
-        <label for="exampleInputEmail1">
-          Email address
-        </label>
-        <input 
-          type="email" 
-          class="form-control" 
-          id="email" 
-          aria-describedby="emailHelp" 
-          placeholder="Enter email"
-          ngModel
-            name="email">
-        <small id="emailHelp" class="form-text text-muted">
-          We'll never share your email with anyone else.
-        </small>
+              <div class="form-group row">
+                <label for="exampleTextarea" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="name" 
+                    placeholder="Your Name"
+                    ngModel
+                    name="name"
+                    required>
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <label for="exampleInputEmail1" class="col-sm-2 col-form-label">
+                  Email
+                </label>
+                <div class="col-sm-10">
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  aria-describedby="emailHelp" 
+                  placeholder="your@email.com"
+                  ngModel
+                    name="email"
+                    required
+                    email
+                    pattern="[^ @]*@[^ @]*"
+                    #email="ngModel">
+                <span class="help-block text-danger" *ngIf="!email.valid && email.touched"><strong>Please enter a valid email!</strong></span>    
+
+
+                <small id="emailHelp" class="form-text text-muted">
+                  We'll never share your email with anyone else.
+                </small>
+                </div>
+              </div>
+
+              <div class="form-group ml-1">
+                <label for="exampleTextarea">
+                  Message:
+                </label>
+                <textarea 
+                  class="form-control" 
+                  id="message" 
+                  rows="3"
+                  [(ngModel)]="message"
+                  name="message"
+                    required></textarea><br>
+                    <p>Your message: {{ message | lowercase }}</p>
+              </div>
+              <button 
+                type="submit" 
+                class="btn btn-secondary float-right"
+                [disabled]="!f.valid">
+                  Submit
+              </button>
+            </fieldset>
+          </form>
+          <br><hr><br>
       </div>
 
-      <div class="form-group ml-1">
-        <label for="exampleTextarea">
-          Message:
-        </label>
-        <textarea 
-          class="form-control" 
-          id="message" 
-          rows="3"
-          ngModel
-            name="message"></textarea>
+      <div class="col-6 text-justify" *ngIf="submitted">
+        <h4 class="text-info">Your Message:</h4>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email | lowercase }}</p>
+        <p>Comment: {{ user.message }}</p>
       </div>
-      <button 
-        type="submit" 
-        class="btn btn-secondary float-right">
-          Submit
-      </button>
-    </fieldset>
-  </form>
+  </div>
+</div>
+
+  
