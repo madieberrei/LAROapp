@@ -24,7 +24,7 @@ export class RandomizerComponent implements OnInit {
     const api_url ='https://api.boardgameatlas.com/api/search?client_id=t8RLkXvzon'
     const response = await fetch(api_url);
     const data = await response.json();
-    
+
     let randNum = Math.floor((Math.random() * 100)); //generates random number used for index
     let bgTitle = [];       // contains board game title
     let bgImage = [];       // contains board game image
@@ -48,10 +48,10 @@ export class RandomizerComponent implements OnInit {
     //console.log(bgImage);
 
       // to send to HTML component
-    document.getElementById("bgTitle").innerHTML = String(bgTitle + ' <a href="' + bgaURL +'" target="_blank"> <img src="https://www.flaticon.com/svg/vstatic/svg/813/813300.svg?token=exp=1612983725~hmac=1d7662d69341aa8c25ba9c630bc9a23b" width="15"></a> <a href="https://www.amazon.com/s?k='+ bgTitle +' board game" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/social-media-and-logos-11/32/Logo_amazon-512.png" width="15"></a>');
+    document.getElementById("bgTitle").innerHTML = String(bgTitle + ' &nbsp;<a href="' + bgaURL +'" target="_blank"><img src="https://www.flaticon.com/svg/vstatic/svg/813/813300.svg?token=exp=1612983725~hmac=1d7662d69341aa8c25ba9c630bc9a23b" width="15" height="15" alt="Board Game Atlas"></a> <a href="https://www.amazon.com/s?k='+ bgTitle +' board game" target="_blank"> &nbsp;<img src="https://cdn4.iconfinder.com/data/icons/social-media-and-logos-11/32/Logo_amazon-512.png" width="15" height="15"></a>');
     document.getElementById("bgPlayers").innerHTML = String('# of Players: ' + bgMinPlayers + ' - ' + bgMaxPlayers);
     document.getElementById("bgTime").innerHTML = String('Play Duration: ~ ' + bgMaxTime + ' minutes');
-    document.getElementById("bgDescrip").innerHTML = String(bgDescrip);
+    document.getElementById("bgDescrip").innerHTML = String('<span class="text-secondary h5">Description:</span><br>' + bgDescrip);
     document.getElementById("bgThumbnail").innerHTML= String('<img src="'+bgImage+'" width="300" class="border border-light">');
     
   }
