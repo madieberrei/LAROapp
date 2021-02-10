@@ -2,10 +2,27 @@
     <div class="row">
         <div class="col-12">
             <span class="text-justify">If you want a completely random board game suggestion:</span><br><br>
-            <button type="button" class="btn btn-danger">SURPRISE ME!</button>
+            <button type="button" class="btn btn-danger" (click)="getData()">SURPRISE ME!</button>
         </div>
+    </div>
+    <div class="row mt-5">
+        <p><span class="text-info"><strong>YOUR BOARD GAME SUGGESTION:</strong></span></p>
+    </div>
+    <div class="row mt-5"> 
+        <br>
+        <p class="pt-4 " id="gameSuggestion"></p>
+    </div>
 
 <!-- FUTURE FEATURES
+
+
+    <div *ngFor="let games of data | keyvalue">
+	<div *ngFor="let game of games.value | keyvalue">
+		<div *ngFor="let gameTitle of game.value | keyvalue">
+			{{gameTitle.key}}
+		</div>
+	</div>
+</div>
 
         <div class="col-6">
             <p class="text-secondary">
@@ -105,7 +122,7 @@
                 </div>
         </div>
 
-    -->
+    
     </div>
-    <br><br><br>
+    <br><br><br> -->
 </div>

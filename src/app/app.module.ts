@@ -10,7 +10,8 @@ import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { RandomizerComponent } from './randomizer/randomizer.component';
 import { ContactComponent } from './contact/contact.component';
-import { ResultsComponent } from './randomizer/results/results.component';
+
+
 
 
 
@@ -29,7 +30,7 @@ const appRoutes: Routes =[
     AboutComponent,
     RandomizerComponent,
     ContactComponent,
-    ResultsComponent,
+
   ],
   imports: [
     BrowserModule,
