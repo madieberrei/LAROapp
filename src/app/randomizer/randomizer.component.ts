@@ -26,12 +26,16 @@ export class RandomizerComponent implements OnInit {
     const data = await response.json();
     let randNum = Math.floor((Math.random() * 100));
     let boardGame = [];
+    let bgImage = [];
 
     boardGame.push(data.games[randNum].name);
+    bgImage.push(data.games[randNum].thumb_url);
 
     console.log(boardGame);
+    console.log(bgImage);
 
     document.getElementById("gameSuggestion").innerHTML = String(boardGame);
+    document.getElementById("bgThumbnail").innerHTML= String('<img src="'+bgImage+'">');
     
   }
 
