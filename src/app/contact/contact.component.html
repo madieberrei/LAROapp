@@ -63,7 +63,7 @@
                   [(ngModel)]="message"
                   name="message"
                     required></textarea><br>
-                    <p>Your message: {{ message | lowercase }}</p>
+                    <p>Your message: {{ message | titlecase }}</p>
               </div>
               <button 
                 type="submit" 
@@ -76,7 +76,7 @@
           <br><hr><br>
       </div>
 
-      <div class="col-6 text-justify" *ngIf="submitted">
+      <div class="col text-justify" *ngIf="submitted">
         <h4 class="text-info">Your Message:</h4>
         <p>Name: {{ user.name }}</p>
         <p>Email: {{ user.email | lowercase }}</p>
