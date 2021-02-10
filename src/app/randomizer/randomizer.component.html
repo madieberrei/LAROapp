@@ -1,20 +1,22 @@
-<div class="container">
+
     <div class="row">
-        <div class="col-12">
-            <span class="text-justify">If you want a completely random board game suggestion:</span><br><br>
-            <button type="button" class="btn btn-danger" (click)="getData()">SURPRISE ME!</button>
+        <div class="col"><span class="text-justify">If you want a completely random board game suggestion:</span><br><br>
+                  <button type="button" class="btn btn-danger" (click)="getData()">SURPRISE ME!</button></div>
+      </div>
+      <div class="row">
+        <div class="col pt-4"><p><span class="text-info h3 pb-3"><strong>YOUR BOARD GAME SUGGESTION:</strong></span></p></div>
+      </div>
+      <div class="row ">
+        <div class="col-5"><p id="bgThumbnail"></p></div>
+        <div class="col-5">
+            <p class="pt-4 text-danger h3" id="bgTitle"></p>
+            <p class="pt-4 text-secondary h5" id="bgPlayers"></p>
+            <p class="pt-4 text-secondary h5" id="bgTime"></p> <br>
+            <p class="pt-4" id="bgDescrip"></p>
         </div>
-    </div>
-    <div class="row mt-5">
-        <p><span class="text-info h3"><strong>YOUR BOARD GAME SUGGESTION:</strong></span></p>
-    </div>
-    <div class="row mt-3"> 
-        <p class="pt-4 text-danger h3" id="gameSuggestion"></p>
-    </div>
-    <div class="row mt-5">
-        <p id="bgThumbnail"></p>
-    </div>
-</div>
+      </div>
+
+
 
 <!-- FUTURE FEATURES
 
