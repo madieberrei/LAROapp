@@ -1,25 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { aboutComponent } from './about.component';
+import { AboutComponent } from './about.component';
 
 describe('aboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AboutComponent);
-    component = fixture.componentInstance;
+  it('should contain Welcome in an h4 tag', async(() => {
+    const fixture = TestBed.createComponent(AboutComponent);
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h4').textContent).toContain(`Find`);
+  }));
 });

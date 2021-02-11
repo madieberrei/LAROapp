@@ -1,25 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { navbarComponent } from './navbar.component';
+import { NavbarComponent } from './navbar.component';
 
 describe('navbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
+  it('should contain L A R O in an h1 tag', async(() => {
+    const fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain(`L A R O`);
+  }));
 });

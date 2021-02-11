@@ -1,25 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { randomizerComponent } from './randomizer.component';
+import { RandomizerComponent } from './randomizer.component';
 
-describe('randomizerComponent', () => {
-  let component: 'randomizerComponent';
-  let fixture: ComponentFixture<'randomizerComponent'>;
+describe('RandomizerComponent', () => {
+  let component: RandomizerComponent;
+  let fixture: ComponentFixture<RandomizerComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ 'randomizerComponent' ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent('randomizerComponent');
-    component = fixture.componentInstance;
+  it('should contain WSURPRISE in a button tag', async(() => {
+    const fixture = TestBed.createComponent(RandomizerComponent);
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button').textContent).toContain(`SURPRISE`);
+  }));
 });

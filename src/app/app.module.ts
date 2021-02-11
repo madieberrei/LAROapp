@@ -14,14 +14,14 @@ import { ContactComponent } from './contact/contact.component';
 
 
 
-
-
 const appRoutes: Routes =[
   { path: '', component: LandingComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'randomizer', component: RandomizerComponent }
 ];
+
+
 
 @NgModule({
   declarations: [
